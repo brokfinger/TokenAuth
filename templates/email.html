@@ -1,3 +1,4 @@
 {% autoescape off %}
-http://{{ domain }}{% url 'login' uidb64=uid token=token %}
+    Ссылка для входа под своим логином.
+    http://{{ domain }}{% url 'login' uidb64=uid token=token %}
 {% endautoescape %}

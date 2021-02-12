@@ -3,12 +3,12 @@
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-    {% if request.user.is_authenticated %}
-        {{ user }}
-        <p>количество входов</p>
-        {{ count }}
+    {% if user.is_authenticated %}
+        <p>Имя пользователя: {{ user }}</p>
+        <p>Количество входов по ссылке: {{ count }}</p>
         <a href="{% url 'logout' %}">Выход</a>
     {% else %}
+        <p>Вы не авторизованы.</p>
         <a href="{% url 'register' %}">Регистрация</a>
     {% endif %}
 {% endblock %}
